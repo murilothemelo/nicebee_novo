@@ -1,10 +1,18 @@
 <?php
 class Database {
-    private $host = 'localhost';
-    private $db_name = 'clinica_gestao';
-    private $username = 'root';
-    private $password = '';
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
     private $conn;
+
+    public function __construct() {
+        // Configurações do banco de dados
+        $this->host = $_ENV['DB_HOST'] ?? 'localhost';
+        $this->db_name = $_ENV['DB_NAME'] ?? 'clinica_gestao';
+        $this->username = $_ENV['DB_USER'] ?? 'root';
+        $this->password = $_ENV['DB_PASS'] ?? '';
+    }
 
     public function getConnection() {
         $this->conn = null;

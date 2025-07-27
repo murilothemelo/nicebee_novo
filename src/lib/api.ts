@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AuthResponse, ApiResponse } from '@/types';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://api.nicebee.com.br/api';
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

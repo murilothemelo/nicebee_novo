@@ -4,7 +4,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-$JWT_SECRET = 'your-super-secret-jwt-key-change-in-production';
+$JWT_SECRET = $_ENV['JWT_SECRET'] ?? 'your-super-secret-jwt-key-change-in-production';
 
 function generateJWT($user_id, $email, $type) {
     global $JWT_SECRET;
